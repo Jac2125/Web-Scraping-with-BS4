@@ -16,13 +16,10 @@ col = 0
 for computer in computers:
     computer_price = computer.find('span', class_ = 'screenReaderOnly_2mubv large_3uSI_').text
     computer_description = computer.find('div', class_ = 'productItemName_3IZ3c').text
-    #available_via_ship = computer.find('p', class_ = 'shippingAvailability_2X3xt').text
-    #available_via_store = computer.find('p', class_ = 'availabilityMessageSearchPickup_1h9CR').text
-
+   
     chartsheet.write(row, col, computer_price)
     chartsheet.write(row, col+1, computer_description)
-    #chartsheet.write(row, col, available_via_ship)
-    #chartsheet.write(row, col, available_via_store)
+    
     row += 1
 
 chartbook.close()
